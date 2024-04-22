@@ -1,4 +1,5 @@
 ```kotlin
+
 @State(Scope.Benchmark)
 class BenchmarkTest {
     private val size = 10

@@ -1,0 +1,70 @@
+name: Benchmarks
+on:
+  workflow_dispatch:
+
+jobs:
+  js:
+    #if: false
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4.0.0
+        with:
+          java-version: '21'
+          distribution: 'liberica'
+          architecture: x64
+
+      - name: Run benchmarks
+        run: ./gradlew jsAllThree_BHBenchmark jsAllThree_WBHBenchmark jsLastTwo_BHBenchmark jsLastTwo_WBHBenchmark jsLastOne_BHBenchmark jsLastOne_WBHBenchmark
+
+      - name: Copy results
+        run: |
+          mkdir -p results/js
+          cp -r build/reports/benchmarks/* results/js/
+
+      - name: Publish results
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.TOKEN }}
+          add-paths: results/**
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: results-${{ github.job }}
+          title: 'Benchmarking report'
+
+  wasmJs:
+    #if: false
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4.0.0
+        with:
+          java-version: '21'
+          distribution: 'liberica'
+          architecture: x64
+
+      - name: Run benchmarks
+        run: ./gradlew wasmJsAllThree_BHBenchmark wasmJsAllThree_WBHBenchmark wasmJsLastTwo_BHBenchmark wasmJsLastTwo_WBHBenchmark wasmJsLastOne_BHBenchmark wasmJsLastOne_WBHBenchmark
+
+      - name: Copy results
+        run: |          
+          mkdir -p results/wasmJs
+          cp -r build/reports/benchmarks/* results/wasmJs/
+
+      - name: Publish results
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.TOKEN }}
+          add-paths: results/**
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: results-${{ github.job }}
+          title: 'Benchmarking report'
