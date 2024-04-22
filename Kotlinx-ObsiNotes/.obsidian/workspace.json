@@ -31,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kotlin-Native.md",
+                "file": "Kotlin-JS.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kotlin-Native.md",
+                "file": "Kotlin-JS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kotlin-Native.md",
+                "file": "Kotlin-JS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kotlin-Native.md"
+                "file": "Kotlin-JS.md"
               }
             }
           }
@@ -167,8 +167,9 @@
   },
   "active": "2763dc20c5740f8e",
   "lastOpenFiles": [
-    "Kotlin-JVM.md",
     "Kotlin-Native.md",
+    "Kotlin-JVM.md",
+    "Kotlin-JS.md",
     "999attachments",
     "Welcome.md"
   ]

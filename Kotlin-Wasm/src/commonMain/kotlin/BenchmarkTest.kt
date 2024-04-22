@@ -2,10 +2,6 @@ package org.example
 
 import kotlinx.benchmark.*
 
-//@BenchmarkMode(Mode.AverageTime)
-//@OutputTimeUnit(BenchmarkTimeUnit.NANOSECONDS)
-
-
 @State(Scope.Benchmark)
 class BenchmarkTest {
     private val size = 10

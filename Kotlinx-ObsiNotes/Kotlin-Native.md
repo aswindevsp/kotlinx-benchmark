@@ -27,33 +27,27 @@ class BenchmarkTest {
 # Windows output: 
 
 ```
-> Task :mainBenchmark
-Running 'main' benchmarks for 'main'
+> Task :nativeBenchmark
+Running 'main' benchmarks for 'native'
 
-∩┐╜ org.jetbrains.kotlinx.benchmark.examples.BenchmarkTest.benchmarkMethod
+ΓÇª benchmarks.BenchmarkTest.benchmarkMethod
+Warm-up #0: 1,691,030 ops/sec
+Warm-up #1: 1,718,305 ops/sec
+Warm-up #2: 1,704,898 ops/sec
+Warm-up #3: 1,709,078 ops/sec
+Warm-up #4: 1,682,881 ops/sec
+Iteration #0: 1,806,385 ops/sec
+Iteration #1: 1,759,935 ops/sec
+Iteration #2: 1,659,546 ops/sec
+Iteration #3: 1,718,867 ops/sec
+Iteration #4: 1,749,906 ops/sec
+  Success:   ~ 1,738,928 ops/sec ┬▒2.7%
 
-Warm-up 1: 84306147.313 ops/s
-Warm-up 2: 89055892.507 ops/s
-Warm-up 3: 98447470.422 ops/s
-Warm-up 4: 99010974.012 ops/s
-Warm-up 5: 98372004.876 ops/s
-Iteration 1: 98956735.837 ops/s
-Iteration 2: 97590669.757 ops/s
-Iteration 3: 98853542.853 ops/s
-Iteration 4: 98529852.735 ops/s
-Iteration 5: 98217122.116 ops/s
-
-  Success: 98429584.659 ∩┐╜(99.9%) 2123623.273 ops/s [Average]
-  (min, avg, max) = (97590669.757, 98429584.659, 98956735.837), stdev = 551498.220
-  CI (99.9%): [96305961.386, 100553207.933] (assumes normal distribution)
-
-
-main summary:
-Benchmark                       Mode  Cnt         Score         Error  Units
-BenchmarkTest.benchmarkMethod  thrpt    5  98429584.659 ∩┐╜ 2123623.273  ops/s
-
+native summary:
+Benchmark                       Mode  Cnt        Score       Error    Units
+BenchmarkTest.benchmarkMethod  thrpt    5  1738928.480 ┬▒ 47640.730  ops/sec
 ```
-
+	
 # Linux Output
 
 ```
